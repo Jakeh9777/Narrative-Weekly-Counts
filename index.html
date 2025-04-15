@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Count Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Product Count Tracker</h1>
+    <label for="date">Pick a date:</label>
+    <input type="date" id="date" />
+    <form id="entryForm"></form>
+    <button onclick="submitData()">Submit</button>
+    <button onclick="clearAllData()">Clear All Data</button>
+    <select id="weekSelector"></select>
+    <button onclick="clearThisWeek()">Clear This Week</button>
+    <h2>Weekly Product Counts</h2>
+    <div id="weeklyTable"></div>
+<div class="export-buttons">
+  <button onclick="exportCurrentWeek()">Export Current Week</button>
+  <button onclick="exportAllWeeks()">Export All Data</button>
+</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
