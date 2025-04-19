@@ -1,7 +1,8 @@
 
 const SUPABASE_URL = 'https://pqghusnpwyojthbrnjsh.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxZ2h1c25wd3lvanRoYnJuanNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUwMTU2NjIsImV4cCI6MjA2MDU5MTY2Mn0.G_-UkoxNV4HfX7RHudtCQGYBtu17l5zdmZzIRL-nwh0';
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const { createClient } = supabase;
+const supa = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 document.getElementById("pinInput").addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
@@ -15,7 +16,7 @@ async function handleLogin() {
   const pin = document.getElementById("pinInput").value.trim();
   if (!pin) return;
 
-  const { data, error } = await supabase
+  const { data, error } = await supa
     .from("users")
     .select("*")
     .eq("pin", pin)
