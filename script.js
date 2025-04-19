@@ -9,6 +9,8 @@ document.getElementById("pinInput").addEventListener("keypress", function(event)
   }
 });
 
+document.getElementById("loginButton").addEventListener("click", handleLogin);
+
 async function handleLogin() {
   const pin = document.getElementById("pinInput").value.trim();
   if (!pin) return;
@@ -26,10 +28,5 @@ async function handleLogin() {
 
   document.getElementById("loginOverlay").style.display = "none";
   document.getElementById("app").style.display = "block";
-
-  if (data.role === 'admin') {
-    console.log("Admin login");
-  } else {
-    console.log("User login");
-  }
+  console.log("Logged in as:", data.name, "Role:", data.role);
 }
