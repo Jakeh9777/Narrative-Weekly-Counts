@@ -1,30 +1,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Narrative Weekly Counts</title>
-    <script type="module" crossorigin src="/Narrative-Weekly-Counts/assets/app.js"></script>
-    <link rel="stylesheet" href="/Narrative-Weekly-Counts/assets/style.css">
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <select id="accountSelector"></select>
-        <span id="usernameDisplay"></span>
-        <button id="settingsBtn">⚙️</button>
-      </header>
-      <main>
-        <div class="form-section">
-          <input type="date" id="dateInput" />
-          <form id="productForm">
-    <div id="successMessage"></div></form>
-          <button id="submitBtn">Submit</button>
-        </div>
-        <!-- Weekly view placeholder -->
-        <div id="weeklyView"></div>
-      </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narrative Weekly Counts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginOverlay" class="overlay">
+    <div class="login-box">
+      <h2>Enter PIN to Continue</h2>
+      <input type="password" id="pinInput" placeholder="Your PIN">
+      <button onclick="handleLogin()">Login</button>
     </div>
-  </body>
+  </div>
+
+  <div id="settingsIcon" style="display: none; position: absolute; top: 10px; right: 10px;">⚙️</div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
