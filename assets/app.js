@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const form = document.getElementById('productForm')
   const dateInput = document.getElementById('dateInput')
   const usernameDisplay = document.getElementById('usernameDisplay')
-  usernameDisplay.textContent = USER_NAME
+  const successMessage = document.getElementById('successMessage')
 
+  usernameDisplay.textContent = USER_NAME
   const today = new Date().toISOString().split('T')[0]
   dateInput.value = today
 
@@ -69,7 +70,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Insert error:', insertError)
       alert('Error saving counts.')
     } else {
-      alert('Counts saved!')
+      successMessage.style.display = 'block'
+      successMessage.textContent = '✔ Counts saved!'
+      setTimeout(() => {
+        successMessage.style.display = 'none'
+      }, 3000)
       form.reset()
     }
   })

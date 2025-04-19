@@ -1,38 +1,66 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #ffffff;
-  color: #222;
+  background-color: #f5f5f5;
+  color: #212121;
   margin: 0;
   padding: 0;
 }
 header {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
-  background: #e8f5e9;
   align-items: center;
+  background-color: #e8f5e9;
+  padding: 1em;
+  font-size: 1.2em;
   font-weight: bold;
+  color: #2e7d32;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 main {
   padding: 1em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+form {
+  background: white;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 label {
   display: flex;
   justify-content: space-between;
-  margin: 0.5em 0;
+  align-items: center;
+  margin: 0.75em 0;
+  font-weight: 500;
 }
 input[type="number"] {
-  width: 5em;
-  padding: 0.25em;
+  width: 6em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
 }
 button {
-  background: #4caf50;
+  background-color: #4caf50;
   color: white;
   border: none;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  font-size: 1em;
   margin-top: 1em;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #43a047;
+}
+#successMessage {
+  margin-top: 1em;
+  color: #2e7d32;
+  font-weight: bold;
+  display: none;
 }
 @media (max-width: 600px) {
   label {
@@ -41,5 +69,6 @@ button {
   }
   input[type="number"] {
     width: 100%;
+    margin-top: 0.25em;
   }
 }
