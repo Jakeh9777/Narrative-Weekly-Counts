@@ -5,10 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Narrative Weekly Counts</title>
-    <script type="module" crossorigin src="/Narrative-Weekly-Counts/assets/index.js"></script>
-    <link rel="stylesheet" href="/Narrative-Weekly-Counts/assets/index.css">
+    <script type="module" crossorigin src="/Narrative-Weekly-Counts/assets/app.js"></script>
+    <link rel="stylesheet" href="/Narrative-Weekly-Counts/assets/style.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="app">
+      <header>
+        <select id="accountSelector"></select>
+        <span id="usernameDisplay"></span>
+        <button id="settingsBtn">⚙️</button>
+      </header>
+      <main>
+        <div class="form-section">
+          <input type="date" id="dateInput" />
+          <form id="productForm"></form>
+          <button id="submitBtn">Submit</button>
+        </div>
+        <!-- Weekly view placeholder -->
+        <div id="weeklyView"></div>
+      </main>
+    </div>
   </body>
 </html>
